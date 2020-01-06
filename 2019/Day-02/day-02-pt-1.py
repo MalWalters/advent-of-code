@@ -17,20 +17,16 @@ with open(source_file) as f:
         opp_list.append(int(item))
     #print(opp_list)
     #print('=============================================================')
-    for x in range(0,len(opp_list),4):
-        #print(type(opp_list[x]))
-        operand = opp_list[x]
-        if operand == 99:
-            break
-        first_number = opp_list[opp_list[x + 1]]
-        second_number = opp_list[opp_list[x + 2]]
-        where_to_change = opp_list[x + 3]
-        if opp_list[x+3] == 0:
-            print("here" + str(opp_list[x + 1]) + ':' + str(opp_list[x]) +':' + str(opp_list[x + 2]))
-        if opp_list[x] == 1:
+    address_pointer = 0
+    operand = opp_list[address_pointer]    
+    while operand != 99:          
+        if opp_list[address_pointer] == 1:
             # Adding
-            opp_list[where_to_change] = first_number + second_number
-        elif opp_list[x] == 2:
+            opp_list[opp_list[address_pointer + 3]] = opp_list[opp_list[address_pointer + 1]] + opp_list[opp_list[address_pointer + 2]]
+        elif opp_list[address_pointer] == 2:
             #Multiplication
-            opp_list[where_to_change] = first_number * second_number
-        print(opp_list[0])
+            opp_list[opp_list[address_pointer + 3]] = opp_list[opp_list[address_pointer + 1]] * opp_list[opp_list[address_pointer + 2]]
+        address_pointer += 4
+        operand = opp_list[address_pointer]
+
+    print(opp_list[0])
