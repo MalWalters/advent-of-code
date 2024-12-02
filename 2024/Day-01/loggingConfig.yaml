@@ -1,0 +1,33 @@
+
+version: 1
+
+disable_existing_loggers: true
+
+root:
+  level: DEBUG
+  handlers: [info_file_handler]
+  propagate: yes
+
+loggers:
+  test:
+    level: DEBUG
+    handlers: [info_file_handler]
+    propagate: yes
+
+formatters:
+  brief:
+      format: '%(message)s'
+  default:
+      format: '%(asctime)s %(levelname)s %(message)s'
+      datefmt: '%Y-%m-%d %H:%M:%S'
+
+handlers:
+  info_file_handler:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: default
+    filename: './2024//Day-01/day-01-01.log'
+    mode: a
+    encoding: utf-8
+
+    
