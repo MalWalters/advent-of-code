@@ -1,1 +1,4 @@
 *.log
+2025/Day-02/utils/__pycache__/__init__.cpython-312.pyc
+2025/Day-02/utils/__pycache__/fileLoader.cpython-312.pyc
+2025/Day-02/utils/__pycache__/logger_setup.cpython-312.pyc
